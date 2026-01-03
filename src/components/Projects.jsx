@@ -16,6 +16,9 @@ import {
   ChevronRight,
   ArrowUpRight,
 } from "lucide-react";
+import Absensi from '../assets/Absensi-RFID.png';
+import Nilai from '../assets/E-Nilai.png'
+import Peminjaman from '../assets/Peminjaman-Alat.png'
 
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState("all");
@@ -43,7 +46,7 @@ export default function Projects() {
         "A web-based RFID attendance system that automatically records attendance in real time, complete with an admin dashboard for monitoring and structured attendance reports.",
       category: ["web apps", "rfid"],
       tech: ["Laravel", "Tailwind", "Chart.js", "Alpine.js"],
-      image: "../src/assets/Absensi-RFID.png",
+      image: Absensi,
       accent: "from-teal-500 to-cyan-500",
       liveUrl: "https://absensi.vortech.my.id/",
       features: [
@@ -61,7 +64,7 @@ export default function Projects() {
         "A web-based student grading system that helps teachers efficiently manage, calculate, and monitor student scores through a centralized and intuitive dashboard.",
       category: ["dashboard", "web apps"],
       tech: ["Node.js", "React.js", "Tailwind"],
-      image: "../src/assets/E-Nilai.png",
+      image: Nilai,
       accent: "from-teal-600 to-cyan-600",
       liveUrl: "https://e-nilai.vortech.my.id/",
       features: [
@@ -79,7 +82,7 @@ export default function Projects() {
         "A web-based equipment loan management system integrated with RFID technology to track borrowing, returns, and equipment availability in real time.",
       category: ["web apps", "rfid"],
       tech: ["Laravel", "Tailwind", "Alpine.js"],
-      image: "../src/assets/Peminjaman-Alat.png",
+      image: Peminjaman,
       accent: "from-cyan-500 to-teal-500",
       liveUrl: "#",
       features: [
