@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import {
@@ -45,16 +45,26 @@ export default function Footer() {
   ];
 
   const socialLinks = [
-    { icon: <Github className="h-5 w-5" />, label: "GitHub", href: "#" },
-    { icon: <Linkedin className="h-5 w-5" />, label: "LinkedIn", href: "#" },
-    { icon: <Twitter className="h-5 w-5" />, label: "Twitter", href: "#" },
     {
       icon: <Instagram className="h-5 w-5" />,
       label: "Instagram",
       href: "https://instagram.com/vortechdev_",
     },
     { icon: <Facebook className="h-5 w-5" />, label: "Facebook", href: "#" },
+    { icon: <Github className="h-5 w-5" />, label: "GitHub", href: "#" },
+    { icon: <Linkedin className="h-5 w-5" />, label: "LinkedIn", href: "#" },
   ];
+
+  const [showBackToTop, setShowBackToTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowBackToTop(window.scrollY > 300); // muncul setelah scroll 300px
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
@@ -98,7 +108,7 @@ export default function Footer() {
 
           <div className="flex justify-center items-center mb-16">
             {/* Contact Form */}
-            <div data-aos="fade-left">
+            <div className="w-full max-w-2xl" data-aos="fade-left">
               <div className="p-8 rounded-3xl bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm border border-teal-500/10">
                 <h3 className="text-2xl font-bold text-white mb-6">
                   Send a Message
@@ -303,13 +313,21 @@ export default function Footer() {
         </div>
 
         {/* Back to Top Button */}
-        <button
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="fixed bottom-8 right-8 z-40 p-3 rounded-full bg-gradient-to-br from-teal-600 to-cyan-600 text-white shadow-lg shadow-teal-500/25 hover:shadow-xl hover:shadow-teal-500/35 transition-all duration-300 hover:-translate-y-1"
-          aria-label="Back to top"
-        >
-          <ArrowRight className="h-5 w-5 transform -rotate-90" />
-        </button>
+        {showBackToTop && (
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            aria-label="Back to top"
+            className={`fixed bottom-8 right-8 z-40 p-3 rounded-full bg-gradient-to-br from-teal-600 to-cyan-600 text-white shadow-lg shadow-teal-500/25 hover:shadow-xl hover:shadow-teal-500/35 transition-all duration-500 ease-out hover:-translate-y-1
+              ${
+                showBackToTop
+                  ? "opacity-100 scale-100 translate-y-0 pointer-events-auto"
+                  : "opacity-0 scale-75 translate-y-6 pointer-events-none"
+              }
+          `}
+          >
+            <ArrowRight className="h-5 w-5 -rotate-90" />
+          </button>
+        )}
       </footer>
 
       {/* Custom Animation */}

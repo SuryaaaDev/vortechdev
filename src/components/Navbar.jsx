@@ -116,10 +116,10 @@ export default function Navbar() {
                 <ChevronRight className="h-5 w-5 text-teal-400/50 group-hover:text-teal-400 transform group-hover:translate-x-1 transition-all" />
               </a>
             ))}
-            <button className="mt-8 w-full py-3 bg-gradient-to-r from-teal-600 to-cyan-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-teal-500/20 transition-all duration-300">
+            <a href="#getintouch" className="flex justify-center items-center mt-8 max-w-full py-3 bg-gradient-to-r from-teal-600 to-cyan-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-teal-500/20 transition-all duration-300">
               Get in Touch
               <ChevronRight className="inline ml-2 h-4 w-4" />
-            </button>
+            </a>
 
             {/* Decorative elements */}
             <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-teal-900/10 to-transparent"></div>

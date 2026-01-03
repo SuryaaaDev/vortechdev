@@ -38,53 +38,55 @@ export default function Projects() {
   const projects = [
     {
       id: 1,
-      title: "Absensi RFID",
+      title: "RFID Attendance System",
       description:
-        "Real-time business intelligence dashboard with advanced data visualization and reporting tools.",
+        "A web-based RFID attendance system that automatically records attendance in real time, complete with an admin dashboard for monitoring and structured attendance reports.",
       category: ["web apps", "rfid"],
       tech: ["Laravel", "Tailwind", "Chart.js", "Alpine.js"],
       image: "../src/assets/Absensi-RFID.png",
       accent: "from-teal-500 to-cyan-500",
       liveUrl: "https://absensi.vortech.my.id/",
       features: [
-        "Real-time Charts",
-        "User Management",
-        "Export PDF/CSV",
-        "Dark Mode",
+        "Automatic RFID Scanning",
+        "Daily & Monthly Attendance Reports",
+        "Interactive Attendance Dashboard",
+        "Export to PDF & Excel",
       ],
     },
+
     {
       id: 2,
-      title: "E-Nilai",
+      title: "E-Nilai (Student Grading System)",
       description:
-        "Sustainable e-commerce platform with carbon footprint tracking and eco-friendly features.",
+        "A web-based student grading system that helps teachers efficiently manage, calculate, and monitor student scores through a centralized and intuitive dashboard.",
       category: ["dashboard", "web apps"],
       tech: ["Node.js", "React.js", "Tailwind"],
       image: "../src/assets/E-Nilai.png",
       accent: "from-teal-600 to-cyan-600",
       liveUrl: "https://e-nilai.vortech.my.id/",
       features: [
-        "Carbon Tracker",
-        "Secure Payments",
-        "Inventory Mgmt",
-        "Review System",
+        "Student Score Input & Management",
+        "Automatic Grade Calculation",
+        "Teacher & Admin Role Management",
+        "Interactive Dashboard Visualization",
       ],
     },
+
     {
       id: 3,
-      title: "Peminjaman Alat",
+      title: "Equipment Loan Management System",
       description:
-        "Healthcare monitoring app with AI-powered insights and telemedicine integration.",
+        "A web-based equipment loan management system integrated with RFID technology to track borrowing, returns, and equipment availability in real time.",
       category: ["web apps", "rfid"],
       tech: ["Laravel", "Tailwind", "Alpine.js"],
       image: "../src/assets/Peminjaman-Alat.png",
       accent: "from-cyan-500 to-teal-500",
       liveUrl: "#",
       features: [
-        "AI Analysis",
-        "Video Consult",
-        "Health Records",
-        "Medication Reminder",
+        "RFID-Based Equipment Borrowing",
+        "Real-Time Equipment Availability Tracking",
+        "Loan History & Activity Logs",
+        "Equipment Data Management",
       ],
     },
   ];
@@ -131,78 +133,86 @@ export default function Projects() {
     <div
       data-aos="fade-up"
       data-aos-delay={(index % 3) * 100}
-      className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm border border-teal-500/10 hover:border-teal-500/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-teal-500/10"
+      className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm border border-teal-500/10 hover:border-teal-500/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-teal-500/10 flex flex-col h-full"
     >
-      {/* Background Pattern */}
-      <div className={`absolute inset-0 ${project.image} opacity-50`}></div>
-
-      {/* Project Image/Preview */}
+      {/* Project Image */}
       <div className="relative h-48 overflow-hidden">
-        <div className="absolute inset-0">
-          <img src={`${project.image}`} alt="" />
-          <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
-        </div>
+        <img
+          src={project.image}
+          alt={project.title}
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent" />
 
-        {/* Tech Stack Badges */}
+        {/* Tech Badges */}
         <div className="absolute top-4 left-4 flex flex-wrap gap-2">
           {project.tech.map((tech, idx) => (
             <span
               key={idx}
-              className="px-2 py-1 text-xs font-medium rounded-full bg-gray-900/90 backdrop-blur-sm text-teal-300 border border-teal-500/20"
+              className="px-2 py-1 text-xs rounded-full bg-gray-900/90 text-teal-300 border border-teal-500/20"
             >
               {tech}
             </span>
           ))}
         </div>
 
-        {/* Category Badge */}
+        {/* Category */}
         <div className="absolute bottom-4 left-4">
-          <div
-            className={`px-3 py-1 rounded-full bg-gradient-to-r ${project.accent} text-white text-xs font-medium`}
+          <span
+            className={`px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r ${project.accent}`}
           >
             {project.category[0].toUpperCase()}
+          </span>
+        </div>
+      </div>
+
+      {/* CONTENT */}
+      <div className="flex flex-col flex-1 p-6">
+        {" "}
+        {/* ✅ */}
+        <div>
+          <div className="flex justify-between mb-3">
+            <h3 className="text-xl font-semibold text-white">
+              {project.title}
+            </h3>
+            <ArrowUpRight className="w-5 h-5 text-teal-400/60" />
+          </div>
+
+          <p className="text-gray-400 text-sm mb-4">{project.description}</p>
+
+          <div className="flex flex-wrap gap-2 mb-6">
+            {project.features.map((feature, idx) => (
+              <span
+                key={idx}
+                className="px-2 py-1 text-xs rounded-full bg-teal-500/10 text-teal-300 border border-teal-500/20"
+              >
+                {feature}
+              </span>
+            ))}
           </div>
         </div>
-      </div>
 
-      {/* Content */}
-      <div className="relative p-6">
-        <div className="flex items-start justify-between mb-3">
-          <h3 className="text-xl font-semibold text-white group-hover:text-teal-300 transition-colors duration-300">
-            {project.title}
-          </h3>
-          <ArrowUpRight className="h-5 w-5 text-teal-500/50 group-hover:text-teal-400 transition-colors duration-300" />
-        </div>
-
-        <p className="text-gray-400 text-sm mb-4 leading-relaxed">
-          {project.description}
-        </p>
-
-        {/* Features */}
-        <div className="flex flex-wrap gap-2 mb-6">
-          {project.features.map((feature, idx) => (
-            <span
-              key={idx}
-              className="px-2 py-1 text-xs rounded-full bg-teal-500/10 text-teal-300 border border-teal-500/20"
+        <div className="mt-auto">
+          {" "}
+          {project.liveUrl !== "#" ? (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              className="inline-flex w-full items-center justify-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-500 hover:to-cyan-500 text-white font-medium transition-all duration-300"
             >
-              {feature}
-            </span>
-          ))}
-        </div>
-
-        {/* Action Buttons */}
-        <div className="flex gap-3">
-          <a
-            href={project.liveUrl}
-            target="_blank"
-            className="flex-1 group/btn inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-500 hover:to-cyan-500 text-white font-medium text-sm transition-all duration-300 hover:shadow-lg hover:shadow-teal-500/25"
-          >
-            <Globe className="h-4 w-4" />
-            Live Demo
-          </a>
+              <Globe className="w-4 h-4" />
+              Live Demo
+            </a>
+          ) : (
+            <button
+              className="w-full py-2 rounded-xl text-center border border-dashed border-gray-600 text-gray-400 cursor-not-allowed"
+            >
+              Demo Not Available
+            </button>
+          )}
         </div>
       </div>
-
+      
       {/* Hover Effects */}
       <div
         className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${project.accent} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}
@@ -211,7 +221,10 @@ export default function Projects() {
   );
 
   return (
-    <section className="relative py-24 bg-gradient-to-b from-gray-900 to-gray-950 text-white overflow-hidden" id="projects">
+    <section
+      className="relative py-24 bg-gradient-to-b from-gray-900 to-gray-950 text-white overflow-hidden"
+      id="projects"
+    >
       {/* Background Elements */}
       <div
         className="absolute inset-0 opacity-20"
@@ -360,7 +373,10 @@ export default function Projects() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="#getintouch" className="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-500 hover:to-cyan-500 text-white font-semibold rounded-2xl transition-all duration-300 hover:shadow-2xl hover:shadow-teal-500/25 transform hover:-translate-y-1">
+              <a
+                href="#getintouch"
+                className="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-500 hover:to-cyan-500 text-white font-semibold rounded-2xl transition-all duration-300 hover:shadow-2xl hover:shadow-teal-500/25 transform hover:-translate-y-1"
+              >
                 Start Your Project
                 <ChevronRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </a>
