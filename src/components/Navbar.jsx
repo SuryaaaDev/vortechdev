@@ -98,7 +98,6 @@ export default function Navbar() {
           className={`absolute inset-0 bg-gray-900/95 backdrop-blur-xl mt-14 transition-transform duration-300 ${
             isOpen ? "translate-x-0" : "translate-x-full"
           }`}
-          data-aos="fade-left"
         >
           <div className="flex flex-col space-y-4 p-6">
             {navItems.map((item, index) => (
@@ -119,6 +118,7 @@ export default function Navbar() {
             ))}
             <button className="mt-8 w-full py-3 bg-gradient-to-r from-teal-600 to-cyan-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-teal-500/20 transition-all duration-300">
               Get in Touch
+              <ChevronRight className="inline ml-2 h-4 w-4" />
             </button>
 
             {/* Decorative elements */}

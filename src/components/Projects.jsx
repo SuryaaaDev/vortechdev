@@ -42,7 +42,7 @@ export default function Projects() {
       description:
         "Real-time business intelligence dashboard with advanced data visualization and reporting tools.",
       category: ["web apps", "rfid"],
-      tech: ["Laravel", "Tailwind", "Chart.js"],
+      tech: ["Laravel", "Tailwind", "Chart.js", "Alpine.js"],
       image: "../src/assets/Absensi-RFID.png",
       accent: "from-teal-500 to-cyan-500",
       liveUrl: "https://absensi.vortech.my.id/",
@@ -76,7 +76,7 @@ export default function Projects() {
       description:
         "Healthcare monitoring app with AI-powered insights and telemedicine integration.",
       category: ["web apps", "rfid"],
-      tech: ["React Native", "Firebase", "Python", "TensorFlow"],
+      tech: ["Laravel", "Tailwind", "Alpine.js"],
       image: "../src/assets/Peminjaman-Alat.png",
       accent: "from-cyan-500 to-teal-500",
       liveUrl: "#",
@@ -360,15 +360,15 @@ export default function Projects() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-500 hover:to-cyan-500 text-white font-semibold rounded-2xl transition-all duration-300 hover:shadow-2xl hover:shadow-teal-500/25 transform hover:-translate-y-1">
+              <a href="#getintouch" className="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-500 hover:to-cyan-500 text-white font-semibold rounded-2xl transition-all duration-300 hover:shadow-2xl hover:shadow-teal-500/25 transform hover:-translate-y-1">
                 Start Your Project
                 <ChevronRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </button>
+              </a>
 
-              <button className="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-gray-800/50 backdrop-blur-sm border border-teal-500/30 hover:border-teal-400/50 text-white font-semibold rounded-2xl transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10 transform hover:-translate-y-1">
+              {/* <button className="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-gray-800/50 backdrop-blur-sm border border-teal-500/30 hover:border-teal-400/50 text-white font-semibold rounded-2xl transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10 transform hover:-translate-y-1">
                 View All Projects
                 <ExternalLink className="h-5 w-5 text-teal-400" />
-              </button>
+              </button> */}
             </div>
           </div>
         </div>

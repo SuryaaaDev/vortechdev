@@ -25,9 +25,24 @@ const teamMembers = [
     role: "Network Engineer",
     socials: {
       github: "#",
-      linkedin: "https://www.linkedin.com/in/fauzan-aziz-wibrilliant-28365b369/",
+      linkedin:
+        "https://www.linkedin.com/in/fauzan-aziz-wibrilliant-28365b369/",
     },
   },
+];
+
+const techStack = [
+  "Laravel",
+  "React",
+  "TypeScript",
+  "Node.js",
+  "Tailwind CSS",
+  "MySQL",
+  "MongoDB",
+  "Virtualization & Containerization",
+  "AWS",
+  "Docker",
+  "etc.",
 ];
 
 export default function Team() {
@@ -41,14 +56,16 @@ export default function Team() {
   }, []);
 
   return (
-    <section className="relative py-28 bg-gradient-to-b from-gray-950 to-gray-900 text-white" id="team">
+    <section
+      className="relative py-28 bg-gradient-to-b from-gray-950 to-gray-900 text-white"
+      id="team"
+    >
       {/* Glow background */}
       <div className="absolute inset-0 bg-teal-500/5 blur-3xl" />
 
       <div className="relative max-w-7xl mx-auto px-6" data-aos="fade-up">
         {/* Heading */}
         <div className="text-center mb-16" data-aos="fade-down">
-          
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-800/50 backdrop-blur-sm border border-teal-500/20 mb-6">
             <Sparkles className="h-4 w-4 text-teal-400" />
             <span className="text-sm font-medium bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
@@ -78,7 +95,11 @@ export default function Team() {
 
               <div className="relative p-8 text-center">
                 {/* ICON PROFILE */}
-                <div className="relative w-28 h-28 mx-auto mb-6 group" data-aos="zoom-in" data-aos-delay={index * 150 + 100}>
+                <div
+                  className="relative w-28 h-28 mx-auto mb-6 group"
+                  data-aos="zoom-in"
+                  data-aos-delay={index * 150 + 100}
+                >
                   {/* Outer Glow Ring */}
                   <div className="absolute inset-0 rounded-full bg-gradient-to-br from-teal-400/40 to-cyan-400/40 blur-lg opacity-0 group-hover:opacity-100 transition" />
 
@@ -96,10 +117,15 @@ export default function Team() {
                 <p className="text-teal-400 text-sm mt-1">{member.role}</p>
 
                 {/* Social Icons */}
-                <div className="flex justify-center gap-4 mt-6" data-aos="fade-up" data-aos-delay={index * 150 + 200}>
+                <div
+                  className="flex justify-center gap-4 mt-6"
+                  data-aos="fade-up"
+                  data-aos-delay={index * 150 + 200}
+                >
                   {member.socials.github && (
                     <a
-                      href={member.socials.github} target="_blank"
+                      href={member.socials.github}
+                      target="_blank"
                       className="p-2 rounded-full bg-gray-800 hover:bg-teal-500/20 text-gray-400 hover:text-teal-400 transition"
                     >
                       <Github size={18} />
@@ -107,7 +133,8 @@ export default function Team() {
                   )}
                   {member.socials.linkedin && (
                     <a
-                      href={member.socials.linkedin} target="_blank"
+                      href={member.socials.linkedin}
+                      target="_blank"
                       className="p-2 rounded-full bg-gray-800 hover:bg-cyan-500/20 text-gray-400 hover:text-cyan-400 transition"
                     >
                       <Linkedin size={18} />
@@ -125,6 +152,25 @@ export default function Team() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Tech Stack */}
+        <div className="mt-16" data-aos="fade-up">
+          <h3 className="text-xl font-semibold text-white text-center mb-8">
+            Our Tech Stack
+          </h3>
+          <div className="flex flex-wrap justify-center gap-3">
+            {techStack.map((tech, index) => (
+              <div
+                key={index}
+                data-aos="fade-up"
+                data-aos-delay={index * 50}
+                className="px-4 py-2 rounded-full bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm border border-teal-500/10 text-teal-300 hover:text-white hover:border-teal-500/30 transition-all duration-300"
+              >
+                {tech}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

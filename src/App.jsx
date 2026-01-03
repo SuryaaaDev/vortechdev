@@ -13,14 +13,16 @@ function App() {
   return (
     <>
       {loading && <LoadingScreen onFinish={() => setLoading(false)} />}
-      {!loading && <Hero />}
-
-      <Navbar />
-      <Hero />
-      <About />
-      <Team />
-      <Projects />
-      <Footer />
+      {!loading && (
+        <>
+          <Navbar />
+          <Hero />
+          <About />
+          <Team />
+          <Projects />
+          <Footer />
+        </>
+      )}
     </>
   );
 }

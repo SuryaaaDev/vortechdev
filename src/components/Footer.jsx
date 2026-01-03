@@ -29,44 +29,40 @@ export default function Footer() {
 
   const quickLinks = [
     { label: "Home", href: "#" },
-    { label: "About", href: "#" },
-    { label: "Our Team", href: "#" },
-    { label: "Projects", href: "#" },
-    { label: "Get in Touch", href: "#" },
+    { label: "About", href: "#about" },
+    { label: "Our Team", href: "#team" },
+    { label: "Projects", href: "#projects" },
+    { label: "Get in Touch", href: "#getintouch" },
   ];
 
   const services = [
-    { label: "Web Development", href: "#" },
-    { label: "UI/UX Design", href: "#" },
-    { label: "Mobile Apps", href: "#" },
-    { label: "API Development", href: "#" },
-    { label: "Cloud Solutions", href: "#" },
-    { label: "DevOps", href: "#" },
+    { label: "Web Development", href: "#about" },
+    { label: "UI/UX Design", href: "#about" },
+    { label: "Mobile Apps", href: "#about" },
+    { label: "API Development", href: "#about" },
+    { label: "Cloud Solutions", href: "#about" },
+    { label: "DevOps", href: "#about" },
   ];
 
   const socialLinks = [
     { icon: <Github className="h-5 w-5" />, label: "GitHub", href: "#" },
     { icon: <Linkedin className="h-5 w-5" />, label: "LinkedIn", href: "#" },
     { icon: <Twitter className="h-5 w-5" />, label: "Twitter", href: "#" },
-    { icon: <Instagram className="h-5 w-5" />, label: "Instagram", href: "https://instagram.com/vortechdev_" },
+    {
+      icon: <Instagram className="h-5 w-5" />,
+      label: "Instagram",
+      href: "https://instagram.com/vortechdev_",
+    },
     { icon: <Facebook className="h-5 w-5" />, label: "Facebook", href: "#" },
-  ];
-
-  const techStack = [
-    "React",
-    "Next.js",
-    "TypeScript",
-    "Node.js",
-    "Tailwind CSS",
-    "MongoDB",
-    "AWS",
-    "Docker",
   ];
 
   return (
     <>
       {/* Get in Touch Section */}
-      <section className="relative py-24 bg-gradient-to-b from-gray-900 to-gray-950 text-white overflow-hidden" id="getintouch">
+      <section
+        className="relative py-24 bg-gradient-to-b from-gray-900 to-gray-950 text-white overflow-hidden"
+        id="getintouch"
+      >
         {/* Background Elements */}
         <div
           className="absolute inset-0 opacity-30"
@@ -100,100 +96,7 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 mb-16">
-            {/* Contact Info */}
-            <div data-aos="fade-right">
-              <div className="space-y-8">
-                <div className="group p-6 rounded-2xl bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm border border-teal-500/10 hover:border-teal-500/30 transition-all duration-500 hover:-translate-y-1">
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-xl bg-gradient-to-br from-teal-500 to-cyan-500">
-                      <Mail className="h-6 w-6 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold text-white mb-2">
-                        Email Us
-                      </h3>
-                      <a
-                        href="mailto:hello@vortechdev.com"
-                        className="text-teal-300 hover:text-cyan-300 transition-colors duration-300"
-                      >
-                        hello@vortechdev.com
-                      </a>
-                      <p className="text-gray-400 text-sm mt-2">
-                        Typically respond within 24 hours
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="group p-6 rounded-2xl bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm border border-teal-500/10 hover:border-teal-500/30 transition-all duration-500 hover:-translate-y-1">
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-xl bg-gradient-to-br from-teal-600 to-cyan-600">
-                      <Phone className="h-6 w-6 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold text-white mb-2">
-                        Call Us
-                      </h3>
-                      <a
-                        href="tel:+11234567890"
-                        className="text-teal-300 hover:text-cyan-300 transition-colors duration-300"
-                      >
-                        +1 (123) 456-7890
-                      </a>
-                      <p className="text-gray-400 text-sm mt-2">
-                        Mon-Fri from 9am to 6pm
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="group p-6 rounded-2xl bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm border border-teal-500/10 hover:border-teal-500/30 transition-all duration-500 hover:-translate-y-1">
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-xl bg-gradient-to-br from-cyan-500 to-teal-500">
-                      <MapPin className="h-6 w-6 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold text-white mb-2">
-                        Visit Us
-                      </h3>
-                      <p className="text-teal-300">
-                        123 Tech Street, Suite 456
-                      </p>
-                      <p className="text-gray-400 text-sm mt-2">
-                        San Francisco, CA 94107
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Social Links */}
-              <div className="mt-8">
-                <h3 className="text-xl font-semibold text-white mb-4">
-                  Follow Us
-                </h3>
-                <div className="flex flex-wrap gap-3">
-                  {socialLinks.map((social, index) => (
-                    <a
-                      key={index}
-                      href={social.href}
-                      data-aos="fade-up"
-                      data-aos-delay={index * 100}
-                      className="group relative p-3 rounded-xl bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm border border-teal-500/10 hover:border-teal-500/30 transition-all duration-300"
-                      aria-label={social.label}
-                      target="_blank"
-                    >
-                      <div className="text-teal-300 group-hover:text-white transition-colors duration-300">
-                        {social.icon}
-                      </div>
-                      <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 rounded-full bg-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </a>
-                  ))}
-                </div>
-              </div>
-            </div>
-
+          <div className="flex justify-center items-center mb-16">
             {/* Contact Form */}
             <div data-aos="fade-left">
               <div className="p-8 rounded-3xl bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm border border-teal-500/10">
@@ -274,25 +177,6 @@ export default function Footer() {
               </div>
             </div>
           </div>
-
-          {/* Tech Stack */}
-          <div className="mb-16" data-aos="fade-up">
-            <h3 className="text-xl font-semibold text-white text-center mb-8">
-              Our Tech Stack
-            </h3>
-            <div className="flex flex-wrap justify-center gap-3">
-              {techStack.map((tech, index) => (
-                <div
-                  key={index}
-                  data-aos="fade-up"
-                  data-aos-delay={index * 50}
-                  className="px-4 py-2 rounded-full bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm border border-teal-500/10 text-teal-300 hover:text-white hover:border-teal-500/30 transition-all duration-300"
-                >
-                  {tech}
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </section>
 
@@ -330,14 +214,6 @@ export default function Footer() {
                 Building the future of digital experiences with cutting-edge
                 technology and innovative solutions.
               </p>
-              <div className="flex items-center gap-4">
-                <div className="p-2 rounded-lg bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm border border-teal-500/10">
-                  <Globe className="h-5 w-5 text-teal-400" />
-                </div>
-                <div className="p-2 rounded-lg bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm border border-teal-500/10">
-                  <Zap className="h-5 w-5 text-cyan-400" />
-                </div>
-              </div>
             </div>
 
             {/* Quick Links */}
@@ -382,27 +258,27 @@ export default function Footer() {
 
             {/* Newsletter */}
             <div data-aos="fade-up" data-aos-delay="300">
-              <h3 className="text-lg font-semibold text-white mb-6">
-                Stay Updated
+              <h3 className="text-xl font-semibold text-white mb-4">
+                Follow Us
               </h3>
-              <p className="text-gray-400 mb-4">
-                Subscribe to our newsletter for the latest updates and insights.
-              </p>
-              <form className="space-y-3">
-                <div className="relative">
-                  <input
-                    type="email"
-                    placeholder="Your email"
-                    className="w-full px-4 py-3 pr-12 rounded-xl bg-gray-800/50 border border-teal-500/20 text-white placeholder-gray-500 focus:outline-none focus:border-teal-500/40 focus:ring-1 focus:ring-teal-500/20 transition-all duration-300"
-                  />
-                  <button
-                    type="submit"
-                    className="absolute right-2 top-2 p-2 rounded-lg bg-gradient-to-r from-teal-600 to-cyan-600 text-white hover:from-teal-500 hover:to-cyan-500 transition-all duration-300"
+              <div className="flex flex-wrap gap-3">
+                {socialLinks.map((social, index) => (
+                  <a
+                    key={index}
+                    href={social.href}
+                    data-aos="fade-up"
+                    data-aos-delay={index * 100}
+                    className="group relative p-3 rounded-xl bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm border border-teal-500/10 hover:border-teal-500/30 transition-all duration-300"
+                    aria-label={social.label}
+                    target="_blank"
                   >
-                    <Send className="h-4 w-4" />
-                  </button>
-                </div>
-              </form>
+                    <div className="text-teal-300 group-hover:text-white transition-colors duration-300">
+                      {social.icon}
+                    </div>
+                    <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2 h-2 rounded-full bg-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
 
@@ -415,27 +291,6 @@ export default function Footer() {
               <p>
                 © {new Date().getFullYear()} VortechDev. All rights reserved.
               </p>
-            </div>
-
-            <div className="flex items-center gap-6">
-              <a
-                href="#"
-                className="text-gray-400 hover:text-teal-300 text-sm transition-colors duration-300"
-              >
-                Privacy Policy
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-cyan-300 text-sm transition-colors duration-300"
-              >
-                Terms of Service
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-teal-300 text-sm transition-colors duration-300"
-              >
-                Cookie Policy
-              </a>
             </div>
           </div>
 
