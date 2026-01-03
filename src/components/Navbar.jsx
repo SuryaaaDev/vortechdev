@@ -1,8 +1,19 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { Menu, X, ChevronRight } from "lucide-react";
 import Logo from "../assets/VortechDev.png";
 
 export default function Navbar() {
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      easing: "ease-out-cubic",
+      once: true,
+      offset: 50,
+    });
+  }, []);
+
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
@@ -16,7 +27,7 @@ export default function Navbar() {
       <nav className="fixed top-0 w-full z-50 bg-gray-900/95 backdrop-blur-xl border-b border-teal-900/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-2" data-aos="fade-down">
               <div className="relative">
                 <div className="relative px-3 py-1 rounded-lg">
                   <a
@@ -31,10 +42,12 @@ export default function Navbar() {
             </div>
 
             <div className="hidden md:flex items-center space-x-1">
-              {navItems.map((item) => (
+              {navItems.map((item, index) => (
                 <a
                   key={item.label}
                   href={item.href}
+                  data-aos="fade-down"
+                  data-aos-delay={index * 100}
                   className="group relative px-4 py-2 rounded-lg transition-all duration-300 hover:bg-gray-800/50"
                 >
                   <span className="text-gray-300 group-hover:text-white transition-colors duration-300">
@@ -45,8 +58,15 @@ export default function Navbar() {
               ))}
             </div>
 
-            <div className="hidden md:flex">
-              <a href="#getintouch" className="ml-4 px-6 py-2 bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-500 hover:to-cyan-500 text-white font-medium rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-teal-500/20 transform hover:-translate-y-0.5">
+            <div
+              className="hidden md:flex"
+              data-aos="zoom-in"
+              data-aos-delay="300"
+            >
+              <a
+                href="#getintouch"
+                className="ml-4 px-6 py-2 bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-500 hover:to-cyan-500 text-white font-medium rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-teal-500/20 transform hover:-translate-y-0.5"
+              >
                 Get in Touch
                 <ChevronRight className="inline ml-2 h-4 w-4" />
               </a>
@@ -78,12 +98,15 @@ export default function Navbar() {
           className={`absolute inset-0 bg-gray-900/95 backdrop-blur-xl mt-14 transition-transform duration-300 ${
             isOpen ? "translate-x-0" : "translate-x-full"
           }`}
+          data-aos="fade-left"
         >
           <div className="flex flex-col space-y-4 p-6">
             {navItems.map((item, index) => (
               <a
                 key={item.label}
                 href={item.href}
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
                 className="group flex items-center justify-between p-4 rounded-xl bg-gray-800/50 hover:bg-gray-800 transition-all duration-300"
                 style={{ transitionDelay: `${index * 50}ms` }}
                 onClick={() => setIsOpen(false)}
