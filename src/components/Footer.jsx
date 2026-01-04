@@ -127,7 +127,7 @@ export default function Footer() {
                         type="text"
                         id="name"
                         className="w-full px-4 py-3 rounded-xl bg-gray-800/50 border border-teal-500/20 text-white placeholder-gray-500 focus:outline-none focus:border-teal-500/40 focus:ring-1 focus:ring-teal-500/20 transition-all duration-300"
-                        placeholder="John Doe"
+                        placeholder="Smith"
                       />
                     </div>
                     <div>
@@ -141,7 +141,7 @@ export default function Footer() {
                         type="email"
                         id="email"
                         className="w-full px-4 py-3 rounded-xl bg-gray-800/50 border border-teal-500/20 text-white placeholder-gray-500 focus:outline-none focus:border-teal-500/40 focus:ring-1 focus:ring-teal-500/20 transition-all duration-300"
-                        placeholder="john@example.com"
+                        placeholder="smith@vortech.my.id"
                       />
                     </div>
                   </div>
