@@ -17,10 +17,12 @@ function App() {
         <>
           <Navbar />
           <Hero />
-          <About />
-          <Team />
-          <Projects />
-          <Footer />
+          <div className="bg-gradient-to-b from-gray-900 to-gray-950 text-white">
+            <About />
+            <Team />
+            <Projects />
+            <Footer />
+          </div>
         </>
       )}
     </>

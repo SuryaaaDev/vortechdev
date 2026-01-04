@@ -92,7 +92,7 @@ export default function About() {
   // ];
 
   return (
-    <section className="relative py-24 bg-gradient-to-b from-gray-900 via-gray-900 to-gray-950 text-white overflow-hidden" id="about">
+    <section className="relative py-24 overflow-hidden" id="about">
       <div
         className="absolute inset-0 opacity-20"
         style={{

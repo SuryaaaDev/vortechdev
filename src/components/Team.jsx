@@ -60,7 +60,7 @@ export default function Team() {
 
   return (
     <section
-      className="relative py-28 bg-gradient-to-b from-gray-950 to-gray-900 text-white"
+      className="relative py-28"
       id="team"
     >
       {/* Glow background */}

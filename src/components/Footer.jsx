@@ -70,7 +70,7 @@ export default function Footer() {
     <>
       {/* Get in Touch Section */}
       <section
-        className="relative py-24 bg-gradient-to-b from-gray-900 to-gray-950 text-white overflow-hidden"
+        className="relative py-24 overflow-hidden"
         id="getintouch"
       >
         {/* Background Elements */}

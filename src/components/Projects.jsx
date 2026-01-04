@@ -134,7 +134,7 @@ export default function Projects() {
 
   const ProjectCard = ({ project, index }) => (
     <div
-      data-aos="fade-up"
+      data-aos="fade-up"  
       data-aos-delay={(index % 3) * 100}
       className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm border border-teal-500/10 hover:border-teal-500/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-teal-500/10 flex flex-col h-full"
     >
@@ -225,7 +225,7 @@ export default function Projects() {
 
   return (
     <section
-      className="relative py-24 bg-gradient-to-b from-gray-900 to-gray-950 text-white overflow-hidden"
+      className="relative py-24 overflow-hidden"
       id="projects"
     >
       {/* Background Elements */}
